@@ -38,7 +38,7 @@ O projeto consiste em disponibilizar, a partir de um dataset do [Inside Airbnbn]
 O projeto, de forma resumida, contará com as seguintes etapas (etapas já disponíveis encontram-se marcadas):
 
 - [X] Dag para extrair dados do Inside Airbnb.
-- [ ] Dag para realizar o upload dos dados para AWS S3.
+- [X] Dag para realizar o upload dos dados para AWS S3.
 - [ ] Com o DBT, carregar os dados da AWS S3 para o Snowflake.
 - [ ] Com o DBT, realizar as transformações necessárias nos dados.
 - [ ] Datasets prontos para uso pelos times de machine learning.
