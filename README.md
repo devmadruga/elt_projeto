@@ -1,7 +1,11 @@
 # Projeto ELT (Extract, Load and Transform)
 
-Este repositório possui por objetivo compartilhar alguns dos principais arquivos de um projeto ELT realizado com finalidade de estudos.
+Este repositório possui por objetivo COMPARTILHAR alguns dos principais arquivos de um projeto ELT. Os arquivos aqui compartilhados pertencem a dois projetos distintos, pois o objetivo é mostrar o trabalho que pode ser realizado com as tecnologias selecionadas.
 
+Embora os arquivos pertençam a dois projetos distintos, ambos utilizam dados do [Inside Airbnbn](http://insideairbnb.com/get-the-data/) e, basicamente, possuem a mesma essência:
+
+1. Fazer o *extract* dos dados do [Inside Airbnbn](http://insideairbnb.com/get-the-data/) e fazer o *load* para um bucket aws s3.
+2. Fazer o *transform* dos dados utilizando DBT conectado ao Snowflake.
 
 ## :open_book: Índice
 
@@ -9,7 +13,6 @@ Este repositório possui por objetivo compartilhar alguns dos principais arquivo
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
 * [Planejamento](#memo-planejamento)
 * [Licença](#ramen-licença)
-
 
 ## :hammer: Tecnologias utilizadas
 As tecnologias utilizadas neste projeto:
@@ -20,29 +23,25 @@ As tecnologias utilizadas neste projeto:
 5. DBT (Data Build Tool)
 
 ## :speech_balloon: Sobre o Projeto
-O projeto consiste em disponibilizar, a partir de um dataset do [Inside Airbnbn](http://insideairbnb.com/get-the-data/), dados tratados para dois times de engenheiros de machine learning. O objetivo de cada time de machine learning:
+Alguns projetos que já fiz com as tecnologias acima e com os dados disponíveis no [Inside Airbnbn](http://insideairbnb.com/get-the-data/) possuíam como objetivo:
 
-**Time 1**
-
-> Deseja criar um modelo de machine learning que seja capaz de retornar um valor (R$) de alguel/dia a partir de entradas como "área", "localização", "número de camas" e comodidades" de um imóvel hipotético.
-
-**Time 2**
-
-> Deseja criar um modelo de classificação dos comentários/avaliações dos clientes, buscando identificar comentários como: POSITIVO, NEGATIVO ou NEUTRO.
-
-
-##### Observação: Em um primeiro momento, a implementação dos modelos de machine learning não fazem parte do escopo deste projeto.
-
+1. Fornecer um banco de dados pronto para utilização por um grupo de engenheiros de machine learning que criaram um modelo capaz de retornar um valor (R$) de alguel/dia a partir de entradas como "área", "localização", "número de camas" e comodidades" de um imóvel hipotético.
+2. Fornecer um banco de dados pronto para utilização por um grupo de engenheiros de machine learning que criaram um modelo de classificação dos comentários/avaliações dos clientes, buscando classificar os comentários como: POSITIVO, NEGATIVO ou NEUTRO.
 
 ## :memo: Planejamento
 O projeto, de forma resumida, contará com as seguintes etapas (etapas já disponíveis encontram-se marcadas):
 
 - [X] Dag para extrair dados do Inside Airbnb.
+- [X] Construção de relatórios automatizados a respeito dos dados raspados do Inside Airbnb.
+- [X] Dag para tratamento de dados. *Observação: Infelizmente esta etapa foi necessária (anterior aos tratamentos feitos com DBT por SQL), pois uma das colunas é a "avaliação do usuário que ficou na acomodação do airbnb". Assim, este campo é um texto aberto, contendo quebras de linhas, tags html e tudo mais que um usuário pode digitar "de forma aberta" em um campo aberto. Somente consegui colocar o .csv relativo a estas informações no SNOWFLAKE quando fiz esta etapa de tratamento utilizando regex e python.*
 - [X] Dag para realizar o upload dos dados para AWS S3.
-- [ ] Com o DBT, carregar os dados da AWS S3 para o Snowflake.
-- [ ] Com o DBT, realizar as transformações necessárias nos dados.
-- [ ] Datasets prontos para uso pelos times de machine learning.
-
+- [X] Conexão do DBT com Snowflake.
+- [X] Comprtilhar o 'DBT models'.
+- [X] Comprtilhar o 'DBT snapshots'.
+- [X] Comprtilhar o 'DBT macros'.
+- [X] Comprtilhar o 'DBT tests'.
+- [X] Comprtilhar o 'DBT assets'.
+- [X] Datasets prontos para utilização pela próxima equipe.
 
 ## :ramen: Licença
 
