@@ -18,9 +18,10 @@ Embora os arquivos pertençam a dois projetos distintos, ambos utilizam dados do
 As tecnologias utilizadas neste projeto:
 1. Python
 2. Apache-Airflow
-3. AWS S3
-4. Snowflake
-5. DBT (Data Build Tool)
+3. Docker
+4. AWS S3
+5. Snowflake
+6. DBT (Data Build Tool)
 
 ## :speech_balloon: Sobre o Projeto
 Alguns projetos que já fiz com as tecnologias acima e com os dados disponíveis no [Inside Airbnbn](http://insideairbnb.com/get-the-data/) possuíam como objetivo:
